@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>2much_tech - CSS Fingerprint Scanner Animation</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<head>
+  <style>
+    *::before,
+    *,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #010;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    .scan {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      color: #3fefef;
+      align-items: center;
+    }
+
+    .fingerprint {
+      background: url(https://cdn-icons-png.flaticon.com/512/5004/5004613.png) no-repeat;
+      width: 300px;
+      height: 320px;
+      background-size: 300px;
+    }
+
+    .fingerprint::before,
+    .fingerprint::after {
+      position: absolute;
+      content: "";
+      width: inherit;
+    }
+
+    .fingerprint::after {
+      background: url(https://cdn-icons-png.flaticon.com/512/5004/5004424.png) no-repeat;
+      height: inherit;
+      background-size: 300px;
+      animation: animate 5s linear infinite alternate;
+    }
+
+    .fingerprint::before {
+      background: #3fefef;
+      height: 8px;
+      border-radius: 20Q;
+      filter: drop-shadow(0 0 20px) drop-shadow(0 0 60px);
+      animation: animate-line 5s linear infinite alternate;
+    }
+
+    h3 {
+      text-transform: uppercase;
+      font-size: 2em;
+      letter-spacing: 2px;
+      filter: drop-shadow(0 0 20px) drop-shadow(0 0 60px);
+      animation: animate-text 1s linear infinite alternate;
+      margin-top: 10px;
+    }
+
+    @keyframes animate {
+
+      from,
+      to {
+        height: 0;
+      }
+
+      50% {
+        height: 320px;
+      }
+    }
+
+    @keyframes animate-line {
+
+      from,
+      to {
+        top: 0;
+      }
+
+      50% {
+        top: 320px;
+      }
+    }
+
+    @keyframes animate-text {
+
+      from,
+      to {
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="scan">
+    <div class="fingerprint"></div>
+    <h3>scanning...</h3>
+  </div>
+</body>
+<!-- partial -->
+  
+</body>
+</html>
